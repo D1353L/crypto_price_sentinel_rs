@@ -1,0 +1,7 @@
+{
+  "bybit_get_market_tickers_url": "",
+  "notifications_webhook_url": "",
+  "timeframe_in_seconds": 30,
+  "polling_interval_millis": 1000,
+  "target_percent_change": 1.0
+}
