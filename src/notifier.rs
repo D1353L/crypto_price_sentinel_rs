@@ -25,15 +25,17 @@ pub async fn alert_on_price_changes(
                 seconds_passed
             );
 
-            notify_webhook(
-                webhook_url,
-                key,
-                percent_change,
-                seconds_passed,
-                initial_pair_data.price,
-                current_pair_data.price,
-            )
-            .await;
+            if !webhook_url.is_empty() {
+                notify_webhook(
+                    webhook_url,
+                    key,
+                    percent_change,
+                    seconds_passed,
+                    initial_pair_data.price,
+                    current_pair_data.price,
+                )
+                .await;
+            }
 
             initial_pair_data.alert_triggered = true;
         }
