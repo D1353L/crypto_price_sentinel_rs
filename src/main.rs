@@ -10,8 +10,10 @@ async fn main() {
         &config.notifications_webhook_url,
         config.timeframe_in_seconds,
         config.polling_interval_millis,
-        config.target_percent_change
-    ).await {
+        config.target_percent_change,
+    )
+    .await
+    {
         eprintln!("Error processing data: {}", e);
     }
 }
